@@ -1,0 +1,129 @@
+/* Reset default margin and padding for all elements */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 80px; /* Adjust this value to set the desired margin size */
+  font-family: Arial, sans-serif; /* Set the font family to Arial */
+}
+
+/* Add space below paragraphs */
+p {
+  margin-top: 1.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.5; /* Adjust this value to increase or decrease the space between lines of text */
+}
+
+/* Add space around images */
+img {
+  margin: 1.6rem 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Image slider */
+.image-slider {
+  display: flex;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.image-slider img {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.image-slider img.visible {
+  display: block;
+}
+
+.image-slider img.visible {
+  opacity: 1;
+}
+
+/* Tab styles */
+.tab {
+  display: none;
+}
+
+.tab-btn-container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  flex: 1;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #ddd;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.tab-btn:hover {
+  background-color: #eee;
+}
+
+.tab-btn.active {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/* Team member styles */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.person {
+  text-align: left;
+}
+
+.person img {
+  max-width: 250px;
+  height: auto;
+}
+
+
+/* Navbar styles */
+.navbar {
+  background-color: #f8f8f8; /* Adjust the color as desired */
+  padding: 10px; /* Adjust the padding as desired */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
+}
+
+.tabs {
+  display: flex;
+  justify-content: right; /* Optional: center the tabs */
+}
+
+.tabs a {
+  margin-right: 10px; /* Adjust this value to increase or decrease the space between tabs */
+  padding: 5px 10px; /* Adjust the padding for a more comfortable tab size */
+  text-decoration: none; /* Remove the underline */
+  color: #333; /* Adjust the link color as desired */
+}
+
+.tabs a:hover {
+  background-color: #eee; /* Adjust the background color for the hover effect */
+  border-radius: 3px; /* Optional: add some border-radius for a rounded appearance */
+}
+
+header h1, h2, h3, h4 {
+  margin-top: 20px; /* Adjust this value to increase or decrease the space before the headers */
+  margin-bottom: 10px;
+}
+
+li {
+    line-height: 1.3;
+    margin-bottom: 10px;
+}

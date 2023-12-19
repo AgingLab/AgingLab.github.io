@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <style>
+        .image-slider {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .image-slider img {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .image-slider img.visible {
+            opacity: 1;
+        }
+        /* Add space below paragraphs */
+        p {
+            margin-bottom: 1.5rem !important;
+        }
+
+        /* Add space around images */
+        img {
+            margin: 1.5rem 0 !important;
+        }
+        
+        /* Tab-related CSS */
+        .tab-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .tab-btn:hover {
+            background-color: #ddd;
+        }
+        
+        .tab-btn.active {
+            background-color: #fff;
+        }
+        
+        .tab {
+            display: none;
+        }
+        
+        .tab.active {
+            display: block;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        {{ content }}
+    </div>
+
+    <script>
+        (function() {
+            var slider = document.getElementById('image-slider');
+            var images = slider.getElementsByTagName('img');
+            var currentIndex = 0;
+            var interval = 3000; // Duration in milliseconds between image changes
+
+            function changeImage() {
+                images[currentIndex].classList.remove('visible');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('visible');
+            }
+
+            setInterval(changeImage, interval);
+        })();
+
+        // Tab-related JavaScript
+        function openTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Set the first tab as active on page load
+        document.getElementsByClassName("tab-btn")[0].click();
+
+    </script>
+</body>
+</html>

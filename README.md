@@ -1,3 +1,2 @@
-# AgingLab.github.io
-
-Advanced Genomics and Imaging in NeurodeGeneration Lab
+# vandalab.github.io
+VANDA Lab
