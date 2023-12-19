@@ -1,5 +1,5 @@
-title: "VANDA Lab"
-description: "Vascular And Neurodegenerative Disorders of Aging (VANDA)"
+title: "AGING Lab"
+description: "AGING Lab"
 theme: jekyll-theme-primer
 include:
   - _includes/head-custom.html
