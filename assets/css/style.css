@@ -112,14 +112,16 @@ img {
 /* Responsive Navbar for Mobile */
 @media screen and (max-width: 768px) {
   .navbar {
-      flex-direction: column; /* Stack items vertically */
-      text-align: center; /* Center-align links */
+      flex-direction: column; /* Stack links vertically */
+      align-items: flex-start; /* Align left */
+      width: 100%;
+      margin-left: 0; /* Reset margin */
   }
 
   .navbar a {
-      display: block;
+      padding: 10px;
       width: 100%;
-      padding: 10px 0;
+      text-align: left; /* Align text */
   }
 }
 
