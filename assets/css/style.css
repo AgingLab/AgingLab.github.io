@@ -77,23 +77,6 @@ img {
   border-bottom: 1px solid #fff;
 }
 
-/* Team member styles */
-.team-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-}
-
-.person {
-  text-align: left;
-}
-
-.person img {
-  max-width: 250px;
-  height: auto;
-}
-
-
 /* Navbar styles */
 .navbar {
   background-color: #f8f8f8; /* Adjust the color as desired */
@@ -116,6 +99,51 @@ img {
 .tabs a:hover {
   background-color: #eee; /* Adjust the background color for the hover effect */
   border-radius: 3px; /* Optional: add some border-radius for a rounded appearance */
+}
+
+/* Team member styles */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.team-category {
+  text-align: left; /* Align text to the left */
+  margin-bottom: 40px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-category h2 {
+  font-size: 24px;
+  color: #333;
+  padding-bottom: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: flex-start; /* Align members to the left */
+  flex-wrap: wrap; /* Allows wrapping if space runs out */
+  gap: 20px; /* Space between members */
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+}
+
+.person img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 header h1, h2, h3, h4 {
