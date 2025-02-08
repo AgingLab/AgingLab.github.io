@@ -12,6 +12,20 @@ body {
   font-family: Arial, sans-serif; /* Set the font family to Arial */
 }
 
+.main-content {
+  width: 80%; /* Adjusts content width for better readability */
+  margin: 0 auto; /* Centers content */
+  text-align: justify; /* Justifies text for a clean look */
+  line-height: 1.6; /* Improves readability */
+}
+
+/* Adjust heading alignment */
+.main-content h1, 
+.main-content h2 {
+  text-align: center; /* Keeps headings centered */
+  margin-bottom: 20px; /* Adds space below headings */
+}
+
 /* Add space below paragraphs */
 p {
   margin-top: 1.3rem;
@@ -78,11 +92,37 @@ img {
 }
 
 /* Navbar styles */
+/* General Navbar Styles */
 .navbar {
-  background-color: #f8f8f8; /* Adjust the color as desired */
-  padding: 10px; /* Adjust the padding as desired */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ecac77;
+  padding: 10px 20px;
+  margin-left: 5%;
 }
+
+/* Style Navbar Links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+/* Responsive Navbar for Mobile */
+@media screen and (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center; /* Center-align links */
+  }
+
+  .navbar a {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+  }
+}
+
 
 .tabs {
   display: flex;
@@ -135,7 +175,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 .person img {
