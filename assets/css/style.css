@@ -129,7 +129,10 @@ img {
   100% { opacity: 1; }
 }
 
-
+.tab-container {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
 /* Tab styles */
 .tab {
   display: none;
