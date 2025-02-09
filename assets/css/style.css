@@ -2,7 +2,7 @@
 :root {
   --primary-color: #559ce4;  /* Dark Blue */
   --secondary-color: #3498db; /* Light Blue */
-  --background-color: #dff6fa; /* Light Gray */
+  --background-color: #f7fcfd; /* Light Gray */
   --text-color: #181717; /* Dark Gray */
   --accent-color: #e74c3c; /* Red */
 }
@@ -96,27 +96,37 @@ img {
   height: auto;
 }
 
-/* Image slider */
 .image-slider {
-  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  height: 400px; /* Set height */
   overflow: hidden;
-  max-height: 300px;
 }
 
 .image-slider img {
-  display: none;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  max-height: 100%;
+  align-items: center; /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  object-fit: contain; /* Prevents cropping */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin-left: 20%;
 }
 
-.image-slider img.visible {
-  display: block;
-}
-
-.image-slider img.visible {
+.image-slider img:first-child {
   opacity: 1;
+  animation: slideShow 6s infinite;
 }
+
+@keyframes slideShow {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 /* Tab styles */
 .tab {
