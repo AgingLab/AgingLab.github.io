@@ -1,15 +1,62 @@
 /* Reset default margin and padding for all elements */
-
+:root {
+  --primary-color: #559ce4;  /* Dark Blue */
+  --secondary-color: #3498db; /* Light Blue */
+  --background-color: #dff6fa; /* Light Gray */
+  --text-color: #181717; /* Dark Gray */
+  --accent-color: #e74c3c; /* Red */
+}
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
 body {
-  margin: 80px; /* Adjust this value to set the desired margin size */
-  font-family: Arial, sans-serif; /* Set the font family to Arial */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+/* General Navbar Styles */
+.navbar {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: flex-end;
+  padding: 5px 15px; /* Reduce padding to make it thinner */
+  height: 50px; /* Set a fixed height */
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
+/* Navbar Links */
+.navbar a {
+  color: white !important;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 12px; /* Reduce padding inside links */
+  font-size: 16px; /* Adjust font size if needed */
+}
+
+/* Responsive Navbar for Mobile */
+@media screen and (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Stack links vertically */
+      align-items: flex-start; /* Align left */
+      width: 100%;
+      margin-left: 0; /* Reset margin */
+  }
+
+  .navbar a {
+      padding: 10px;
+      width: 100%;
+      text-align: left; /* Align text */
+  }
 }
 
 .main-content {
@@ -24,6 +71,14 @@ body {
 .main-content h2 {
   text-align: center; /* Keeps headings centered */
   margin-bottom: 20px; /* Adds space below headings */
+}
+
+.visible {
+  width: 100%; /* Makes the image full width */
+  max-width: 1200px; /* Adjust this to control the max size */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Ensures no extra space below */
+  margin: 20px auto; /* Centers the image */
 }
 
 /* Add space below paragraphs */
@@ -91,41 +146,6 @@ img {
   border-bottom: 1px solid #fff;
 }
 
-/* Navbar styles */
-/* General Navbar Styles */
-.navbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #ecac77;
-  padding: 10px 20px;
-  margin-left: 5%;
-}
-
-/* Style Navbar Links */
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-}
-
-/* Responsive Navbar for Mobile */
-@media screen and (max-width: 768px) {
-  .navbar {
-      flex-direction: column; /* Stack links vertically */
-      align-items: flex-start; /* Align left */
-      width: 100%;
-      margin-left: 0; /* Reset margin */
-  }
-
-  .navbar a {
-      padding: 10px;
-      width: 100%;
-      text-align: left; /* Align text */
-  }
-}
-
-
 .tabs {
   display: flex;
   justify-content: right; /* Optional: center the tabs */
@@ -188,12 +208,25 @@ img {
   margin-bottom: 10px;
 }
 
-header h1, h2, h3, h4 {
-  margin-top: 20px; /* Adjust this value to increase or decrease the space before the headers */
-  margin-bottom: 10px;
-}
-
 li {
     line-height: 1.3;
     margin-bottom: 10px;
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+
+/* Add a section for header properties */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 5px;
+}
+.main-content h1, h2, h3 {
+  text-align: center; /* Keeps headings centered */
+  margin-bottom: 15px !important; /* Adds space below h3 headings */
 }
