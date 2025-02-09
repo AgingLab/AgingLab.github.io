@@ -13,15 +13,6 @@
   box-sizing: border-box;
 }
 
-ul {
-  padding-left: 0; /* Removes default left padding */
-  margin-left: 0; /* Ensures it aligns with text */
-  list-style-position: inside; /* Moves bullet points inside the text block */
-}
-li {
-  margin-left: 20px; /* Adjust spacing as needed */
-}
-
 body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -179,7 +170,7 @@ img {
 }
 
 .tabs a:hover {
-  background-color: #eee; /* Adjust the background color for the hover effect */
+  background-color: #14cff0; /* Adjust the background color for the hover effect */
   border-radius: 3px; /* Optional: add some border-radius for a rounded appearance */
 }
 
@@ -204,6 +195,11 @@ img {
   padding-bottom: 10px;
   width: 100%;
   margin-top: 20px;
+}
+
+.team-category ul {
+  padding-left: 0; /* Remove extra padding */
+  margin-left: 0; /* Align with the rest of the text */
 }
 
 .team-members {
