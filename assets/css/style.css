@@ -13,12 +13,22 @@
   box-sizing: border-box;
 }
 
+ul {
+  padding-left: 0; /* Removes default left padding */
+  margin-left: 0; /* Ensures it aligns with text */
+  list-style-position: inside; /* Moves bullet points inside the text block */
+}
+li {
+  margin-left: 20px; /* Adjust spacing as needed */
+}
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  margin-right: 20%;
 }
 
 /* Navbar styles */
@@ -31,7 +41,7 @@ body {
   padding: 5px 15px; /* Reduce padding to make it thinner */
   height: 50px; /* Set a fixed height */
   margin-left: 10%;
-  margin-right: 20%;
+  margin-right: 10%;
 }
 
 /* Navbar Links */
