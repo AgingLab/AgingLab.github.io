@@ -19,7 +19,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  margin-right: 20%;
+  margin-right: 0%;
 }
 
 /* Navbar styles */
@@ -31,8 +31,9 @@ body {
   justify-content: flex-end;
   padding: 5px 15px; /* Reduce padding to make it thinner */
   height: 50px; /* Set a fixed height */
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* Navbar Links */
