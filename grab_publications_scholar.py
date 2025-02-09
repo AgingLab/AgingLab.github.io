@@ -4,18 +4,35 @@ from bs4 import BeautifulSoup
 # Your Google Scholar ID
 SCHOLAR_ID = "tQY3ijcAAAAJ"
 
+def format_authors(author_str):
+    """Formats author names in APA style (Last, F. M.)."""
+    authors = author_str.split(", ")
+    formatted_authors = []
+    
+    for author in authors:
+        parts = author.split()
+        if len(parts) > 1:
+            last_name = parts[-1]
+            initials = " ".join([f"{name[0]}." for name in parts[:-1]])
+            formatted_authors.append(f"{last_name}, {initials}")
+        else:
+            formatted_authors.append(author)  # Handle unexpected format
+
+    return ", ".join(formatted_authors)
+
 def fetch_publications(scholar_id):
-    """Fetches publications from Google Scholar."""
-    author = scholarly.search_author_id(scholar_id)  # Fetch author profile (returns a dictionary)
-    scholarly.fill(author, sections=["publications"])  # Get full details
+    """Fetches and sorts publications from Google Scholar by year (descending)."""
+    author = scholarly.search_author_id(scholar_id)
+    scholarly.fill(author, sections=["publications"])  
     
     publications = []
     for pub in author.get("publications", []):
-        pub_details = scholarly.fill(pub)  # Fetch full details of each publication
+        pub_details = scholarly.fill(pub)  
         
         title = pub_details["bib"].get("title", "Unknown Title")
         authors = pub_details["bib"].get("author", "Unknown Authors")
-        year = pub_details["bib"].get("pub_year", "Unknown Year")
+        formatted_authors = format_authors(authors)
+        year = str(pub_details["bib"].get("pub_year", "0000"))  # Ensure it's a string
         journal = pub_details["bib"].get("venue", "Unknown Journal")
         link = pub_details.get("pub_url", "")
 
@@ -23,16 +40,19 @@ def fetch_publications(scholar_id):
 
         publications.append({
             "title": title,
-            "authors": authors,
-            "year": year,
+            "authors": formatted_authors,
+            "year": int(year) if year.isdigit() else 0,  # Convert to int only if valid
             "journal": journal,
             "link": link_html
         })
     
+    # Sort by year in descending order (most recent first)
+    publications.sort(key=lambda x: x["year"], reverse=True)
+
     return publications
 
 def generate_html(publications):
-    """Generates an HTML file listing all publications in APA style."""
+    """Generates an HTML file listing all publications in APA style, sorted by year."""
     html = BeautifulSoup(features="html.parser")
 
     # Create HTML structure
@@ -47,7 +67,7 @@ def generate_html(publications):
     html.html.append(body)
     
     h1 = html.new_tag("h1")
-    h1.string = "Publications"
+    h1.string = "Publications (Sorted by Year)"
     body.append(h1)
 
     ol = html.new_tag("ol")
@@ -68,4 +88,4 @@ if __name__ == "__main__":
     with open("publications.html", "w", encoding="utf-8") as f:
         f.write(html_content)
 
-    print("HTML file generated: publications_raw.html")
+    print("HTML file generated: publications.html (Sorted by Year)")
