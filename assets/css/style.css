@@ -58,8 +58,6 @@ body {
 /* Responsive Navbar for Mobile */
 @media screen and (max-width: 768px) {
   .navbar {
-    flex-direction: row;
-    /* Aligns items in a row in reverse order */
     justify-content: flex-end;
     width: 100%;
     margin-left: 0;
