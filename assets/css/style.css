@@ -36,7 +36,7 @@ body {
   padding: 8px 12px;
   font-size: 16px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   .navbar {
     justify-content: flex-end;
     width: 100%;
