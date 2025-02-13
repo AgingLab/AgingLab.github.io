@@ -49,7 +49,7 @@ body {
 @media screen and (max-width: 768px) {
   .navbar {
       flex-direction: column; /* Stack links vertically */
-      /*align-items: flex-start; /* Align left */
+      justify-content: flex-end;      
       width: 100%;
       margin-left: 0; /* Reset margin */
   }
